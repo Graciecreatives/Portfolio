@@ -12,26 +12,26 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component:AboutMe,
-    },
-    {
-      path: '/project',
-      name: 'my project',
-      component: myProject,
-    },
-    {
-      path: '/experience',
-      name: 'my experience',
-      component: myExperience,
-    },
-    {
-      path: '/contact',
-      name: 'contact me',
-      component: contactPage,
+    // },
+    // {
+    //   path: '/about',
+    //   name: 'about',
+    //   component:AboutMe,
+    // },
+    // {
+    //   path: '/project',
+    //   name: 'my project',
+    //   component: myProject,
+    // },
+    // {
+    //   path: '/experience',
+    //   name: 'my experience',
+    //   component: myExperience,
+    // },
+    // {
+    //   path: '/contact',
+    //   name: 'contact me',
+    //   component: contactPage,
     }
   ],
 })
