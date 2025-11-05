@@ -15,7 +15,7 @@
     <div class="md:w-1/2 w-full flex justify-center items-center">
       <div class="circle-container flex justify-center items-center">
         <!-- Center image -->
-        <img src="/src/assets/Images/mypictureeee.png" alt="" class="rounded-full md:w-[75%] w-[70%] z-[2] border-5 border-[#9318FA]  relative" />
+        <img src="/src/assets/Images/Meee.png" alt="" class="rounded-full md:w-[75%] w-[70%] z-[2] border-5 border-[#9318FA]  relative" />
 
         <!-- Orbiting logos -->
         <img src="/src/assets/tailwingLogo.png" alt="" class="w-15 bg-black rounded-full logoimg" />

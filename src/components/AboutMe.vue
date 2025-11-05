@@ -58,7 +58,7 @@
 
     <!-- Right Image -->
     <div class="md:w-1/2 w-full px-2 md:px-5 flex justify-center items-center">
-      <img src="../assets/Images/mypictureeee.png" class="w-full h-auto rounded-lg object-cover" alt="Grace" />
+      <img src="../assets/Images/Meee.png" class="w-full h-auto rounded-lg object-cover" alt="Grace" />
     </div>
   </section>
 </template>
