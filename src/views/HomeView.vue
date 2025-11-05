@@ -7,7 +7,7 @@ import myProject from '@/components/myProject.vue';
 import myGallery from '@/components/myGallery.vue';
 import MyExperience from '@/components/myExperience.vue';
 import contactPage from '@/components/contactPage.vue';
-import Footer from '@/components/Footer.vue';
+import Footer from '@/components/theFooter.vue';
 
 </script>
 
