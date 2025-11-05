@@ -9,12 +9,12 @@
 
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex space-x-6">
-        <router-link to="#" class="text-gray-900 hover:text-purple-700 transition">Home</router-link>
-        <router-link to="/about" class="text-gray-900 hover:text-purple-700 transition">About</router-link>
-        <router-link to="/project" class="text-gray-900 hover:text-purple-700 transition">Projects</router-link>
-        <router-link to="/experience" class="text-gray-900 hover:text-purple-700 transition">Experience</router-link>
-        <router-link to="#" class="text-gray-900 hover:text-purple-700 transition">Education</router-link>
-        <router-link to="#" class="text-gray-900 hover:text-purple-700 transition">Contact</router-link>
+        <router-link to="/" class="text-gray-900 hover:text-purple-700 transition">Home</router-link>
+        <router-link to="/" class="text-gray-900 hover:text-purple-700 transition">About</router-link>
+        <router-link to="/" class="text-gray-900 hover:text-purple-700 transition">Projects</router-link>
+        <router-link to="/" class="text-gray-900 hover:text-purple-700 transition">Experience</router-link>
+        <router-link to="/" class="text-gray-900 hover:text-purple-700 transition">Education</router-link>
+        <router-link to="/" class="text-gray-900 hover:text-purple-700 transition">Contact</router-link>
       </nav>
 
       <!-- Actions & Hamburger -->

@@ -6,7 +6,7 @@
       <h1 class="text-3xl/10 md:text-5xl/14">Hi, I'm <span class="text-[#9318FA]">Grace</span> <br>
         A Fullstack Developer & A Blockchain Developer
       </h1>
-      <p class="text-base mt-5 mb-5">Turning creative ideas into interactive web experiences through clean code and pixel-perfect design.</p>
+      <p class="text-base mt-5 mb-5 text-justify">I build seamless, scalable, and user-focused digital experiences that merge creativity with functionality. From intuitive web apps to decentralized solutions, I love turning ideas into innovation through clean, efficient code.</p>
       <router-link to="" class="md:me-5 me-3 viewWorks text-white p-2 md:px-4 px-2 rounded">View My Works</router-link>
       <router-link to="" class="md:me-5 me-3 contactMe text-black p-2 md:px-4 px-2 rounded">Contact Me</router-link>
     </div>
