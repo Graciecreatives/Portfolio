@@ -21,7 +21,7 @@
       <div v-if="activeTab === 'MYSELF'">
         <p
           class="leading-8 mb-5 text-justify"
-        >Hi, I’m Grace, a passionate frontend developer and creative website designer dedicated to transforming ideas into visually stunning and user friendly digital experiences. I specialize in building responsive, high performance websites using modern technologies like Vue.js, Tailwind CSS, and other cutting-edge tools. Beyond frontend design, I’m expanding my expertise into full-stack and blockchain development to create more scalable and future-ready solutions. I’m driven by innovation, attention to detail, and the desire to help brands and entrepreneurs establish a strong online presence that truly reflects their vision.</p>
+        >Hi, I’m Egbewale Precious Grace, a passionate frontend developer and creative website designer dedicated to transforming ideas into visually stunning and user friendly digital experiences. I specialize in building responsive, high performance websites using modern technologies like Vue.js, Tailwind CSS, and other cutting-edge tools. Beyond frontend design, I’m expanding my expertise into full-stack and blockchain development to create more scalable and future-ready solutions. I’m driven by innovation, attention to detail, and the desire to help brands and entrepreneurs establish a strong online presence that truly reflects their vision.</p>
         <router-link
           to="#"
           class="bg-[#9318FA] text-white px-5 py-2 rounded-md inline-block hover:bg-purple-800 transition-colors duration-300"

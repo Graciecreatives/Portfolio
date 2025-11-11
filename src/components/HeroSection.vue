@@ -3,7 +3,7 @@
   <section class="heroSection md:px-10  px-0 py-10 flex flex-col md:flex-row items-center gap-5 ">
     <div class="md:w-1/2 w-full px-5">
       <div class="bg-[#9318FA] px-3 text-white w-50 rounded mb-5">Available For Projects</div>
-      <h1 class="text-3xl/10 md:text-5xl/14">Hi, I'm <span class="text-[#9318FA]">Grace</span> <br>
+      <h1 class="text-3xl/10 md:text-5xl/14">Hi, I'm <span class="text-[#9318FA]">Graciecreatives</span> <br>
         A Frontend Developer & A Blockchain Developer
       </h1>
       <p class="text-base mt-5 mb-5 text-justify">I build seamless, scalable, and user-focused digital experiences that merge creativity with functionality. From intuitive web apps to decentralized solutions, I love turning ideas into innovation through clean, efficient code.</p>
