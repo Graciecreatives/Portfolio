@@ -84,25 +84,25 @@ import { ref, onMounted } from 'vue';
 const techStacks = ref([
   { name: 'HTML', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
   { name: 'CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-  { name: 'JavaScript', logo: '/src/assets/javascriptLogo.png' },
-  { name: 'Node.js', logo: '/src/assets/nodeLogo.png' },
+  { name: 'JavaScript', logo: '/src/assets/javascriptLogo.webp' },
+  { name: 'Node.js', logo: '/src/assets/nodeLogo.webp' },
   { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
   { name: 'Vue.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
-  { name: 'Tailwind CSS', logo: '/src/assets/tailwingLogo.png' },
-  { name: 'Bootstrap', logo: '/src/assets/bootstrapLogo.png' },
+  { name: 'Tailwind CSS', logo: '/src/assets/tailwingLogo.webp' },
+  { name: 'Bootstrap', logo: '/src/assets/bootstrapLogo.webp' },
   { name: 'Express.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
   { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-  { name: 'Git', logo: '/src/assets/gitLogo.png' },
-  { name: 'GitHub', logo: '/src/assets/githubLogo.png' },
+  { name: 'Git', logo: '/src/assets/gitLogo.webp' },
+  { name: 'GitHub', logo: '/src/assets/githubLogo.webp' },
   { name: 'WordPress', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg' },
   { name: 'Wix', logo: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Wix.com_website_logo.svg' }
 ]);
 
-import CampusCartImage from '../assets/Images/campuscart.png'
-import EAttendanceImage from '../assets/Images/e-attendaceimg.png'
-import GracieFeature from '../assets/Images/GracieFeatur.png'
-import Foodieland from '../assets/Images/foodieland.png'
-import CartDashboard from '../assets/Images/dashboard.png'
+import CampusCartImage from '../assets/Images/campuscart.webp'
+import EAttendanceImage from '../assets/Images/e-attendaceimg.webp'
+import GracieFeature from '../assets/Images/GracieFeatur.webp'
+import Foodieland from '../assets/Images/foodieland.webp'
+import CartDashboard from '../assets/Images/dashboard.webp'
 
 const projects = ref([
   { image: CampusCartImage, title: 'Project 1' },

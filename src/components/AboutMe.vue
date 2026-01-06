@@ -103,10 +103,10 @@
 import { ref, onMounted, onUnmounted } from "vue";
 
 // Import Images
-import Img1 from '../assets/Images/ADE_88903.jpg'
-import Img2 from '../assets/Images/ADE_88543.jpg'
-import Img3 from '../assets/Images/ADE_88383.jpg'
-import Img4 from '../assets/Images/ADE_88703.jpg'
+import Img1 from '../assets/Images/ADE_88903.webp'
+import Img2 from '../assets/Images/ADE_88543.webp'
+import Img3 from '../assets/Images/ADE_88383.webp'
+import Img4 from '../assets/Images/ADE_88703.webp'
 
 const tabs = ["MYSELF", "EDUCATION", "SKILLS"];
 const activeTab = ref("MYSELF");
@@ -129,16 +129,16 @@ onUnmounted(() => {
 const skills = ref([
   { name: 'Vue.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
   { name: 'React.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-  { name: 'Tailwind', logo: '/src/assets/tailwingLogo.png' },
+  { name: 'Tailwind', logo: '/src/assets/tailwingLogo.webp' },
   { name: 'HTML', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
   { name: 'CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-  { name: 'JavaScript', logo: '/src/assets/javascriptLogo.png' },
-  { name: 'Node.js', logo: '/src/assets/nodeLogo.png' },
+  { name: 'JavaScript', logo: '/src/assets/javascriptLogo.webp' },
+  { name: 'Node.js', logo: '/src/assets/nodeLogo.webp' },
   { name: 'Express.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
   { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
   { name: 'Solidity', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg' },
-  { name: 'Git', logo: '/src/assets/gitLogo.png' },
-  { name: 'GitHub', logo: '/src/assets/githubLogo.png' },
+  { name: 'Git', logo: '/src/assets/gitLogo.webp' },
+  { name: 'GitHub', logo: '/src/assets/githubLogo.webp' },
   { name: 'WordPress', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg' },
   { name: 'Wix', logo: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Wix.com_website_logo.svg' }
 ]);
