@@ -5,7 +5,7 @@
       <!-- Logo / Name -->
       <div class="text-2xl font-bold text-gray-900 cursor-pointer" @click="scrollToSection('home')">
         <!-- Assuming Logo.png is dark or works on light. Removed invert. -->
-        <img src="../assets/Logo.png" alt="Logo" class="w-40 md:w-48 opacity-90 hover:opacity-100 transition">
+        <img src="../assets/Logo.png" alt="Logo" class="w-40 md:w-48 opacity-90 hover:opacity-100 transition" loading="eager">
       </div>
 
       <!-- Desktop Navigation -->

@@ -54,6 +54,7 @@
               :alt="tech.name" 
               class="h-10 w-10 md:h-12 md:w-12 object-contain hover:scale-110 transition-transform bg-white/90 rounded-full p-1 border border-white/20 shadow-md"
               :class="{'bg-black': tech.name === 'GitHub' || tech.name === 'Next.js'}"
+              loading="lazy"
             />
           </div>
         </div>
@@ -68,7 +69,7 @@
             :key="index"
             class="carousel-item flex-shrink-0 w-80 md:w-96 h-64 md:h-72 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20"
           >
-            <img :src="project.image" :alt="project.title" class="w-full h-full object-cover">
+            <img :src="project.image" :alt="project.title" class="w-full h-full object-cover" loading="lazy">
           </div>
         </div>
       </div>
