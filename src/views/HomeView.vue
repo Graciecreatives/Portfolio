@@ -2,7 +2,6 @@
 import PortfolioHeader from '@/components/PortfolioHeader.vue';
 import HeroSection from '@/components/HeroSection.vue';
 import AboutMe from '@/components/AboutMe.vue';
-import Technologies from '@/components/Technologies.vue'
 import myProject from '@/components/myProject.vue';
 import myGallery from '@/components/myGallery.vue';
 import MyExperience from '@/components/myExperience.vue';
@@ -13,14 +12,13 @@ import Footer from '@/components/theFooter.vue';
 
 <template>
   <main>
-    <PortfolioHeader/>
-    <HeroSection/>
-    <Technologies/>
-    <AboutMe/>
-    <myProject/>
-    <MyExperience/>
-    <myGallery/>
-    <contactPage/>
-    <Footer/>
+    <PortfolioHeader />
+    <HeroSection id="home" />
+    <AboutMe id="about" />
+    <myProject id="projects" />
+    <MyExperience id="experience" />
+    <myGallery id="gallery" />
+    <contactPage id="contact" />
+    <Footer />
   </main>
 </template>

@@ -1,73 +1,87 @@
 <template>
-  <section class="py-16 px-6 bg-gray-50">
-    <h2 class="text-4xl font-bold text-center mb-8 text-[#9318FA]">Life as a Developer</h2>
+  <section class="py-20 px-4 md:px-12 bg-white relative">
+    
+    <!-- Header -->
+    <div class="text-center mb-16" data-aos="fade-down">
+      <h2 class="text-4xl md:text-5xl font-black text-[#9318FA] mb-6 tracking-tight">LIFE AS A DEVELOPER</h2>
+      <p class="max-w-2xl mx-auto text-gray-600 text-lg leading-relaxed font-light">
+         Bridges built, events hosted, and moments captured. A glimpse into my journey within the tech community.
+      </p>
+      <div class="h-1.5 w-24 bg-[#9318FA] rounded-full mx-auto mt-6"></div>
+    </div>
 
-    <div class="overflow-hidden max-w-6xl mx-auto relative">
-      <div class="marquee flex gap-4">
-        <!-- Duplicate images for smooth infinite scroll -->
-        <div
-          v-for="(image, index) in duplicatedImages"
-          :key="index"
-          class="flex-shrink-0 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5"
-        >
-          <img
-            :src="image"
-            class="rounded-xl object-cover w-full h-48 sm:h-56 md:h-64 shadow-md"
-            :alt="`Gallery Image ${index + 1}`"
-          />
+    <!-- Masonry-style Grid -->
+    <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 max-w-7xl mx-auto">
+      
+      <div 
+        v-for="(image, index) in images" 
+        :key="index"
+        class="relative group rounded-2xl overflow-hidden break-inside-avoid shadow-sm hover:shadow-xl transition-all duration-300"
+        data-aos="zoom-in"
+      >
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+        
+        <!-- Image -->
+        <img
+          :src="image"
+          class="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
+          :alt="`Gallery Image ${index + 1}`"
+          loading="lazy" 
+        />
+        
+        <!-- Hover Badge (Optional) -->
+        <div class="absolute bottom-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+          <span class="bg-white/90 backdrop-blur-md text-[#9318FA] text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+            Moment {{ index + 1 }}
+          </span>
         </div>
       </div>
+
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref } from "vue";
+import Image1 from '@/assets/Images/DSC00168.JPG'
+import Image2 from '@/assets/Images/DSC00169.JPG'
+import Image3 from '@/assets/Images/DSC09180.JPG'
+import Image4 from '@/assets/Images/DSC09320.JPG.jpg'
+import Image5 from '@/assets/Images/DSC09534.JPG'
+import Certificate1 from '@/assets/Images/certificate.png'
 import safeOnline1 from '@/assets/Images/122A2989.jpg'
-import safeOnline2 from '@/assets/Images/122A2994.jpg'
 import safeOnline3 from '@/assets/Images/122A3021.jpg'
 import safeOnline4 from '@/assets/Images/122A3095.jpg'
 import safeOnline5 from '@/assets/Images/122A3103.jpg'
 import safeOnline6 from '@/assets/Images/122A3174.jpg'
 import safeOnline7 from '@/assets/Images/WhatsApp Image 2025-11-04 at 15.21.52_c639e5fe.jpg'
+import Hackathon1 from '@/assets/Images/challenge2.jpeg'
+import Hackathon2 from '@/assets/Images/challenge3.jpeg'
+import Hackathon3 from '@/assets/Images/challenge4.jpeg'
+import Osd from '@/assets/Images/osd1.jpeg'
 
-// Array of images
+
 const images = ref([
+  Image1,
+  Hackathon1,
+  Osd,
+  Hackathon2,
+  Hackathon3,
+  Image2,
+  Image3,
+  Image4,
+  Certificate1,
+  Image5,
   safeOnline1,
-  safeOnline2,
   safeOnline3,
   safeOnline4,
   safeOnline5,
   safeOnline6,
   safeOnline7,
 ]);
-
-// Duplicate images to make the scroll seamless
-const duplicatedImages = computed(() => [...images.value, ...images.value]);
 </script>
 
 <style scoped>
-.marquee {
-  display: flex;
-  gap: 1rem;
-  animation: marquee 20s linear infinite;
-}
-
-.marquee img {
-  transition: transform 0.5s ease;
-}
-
-.marquee img:hover {
-  transform: scale(1.05);
-}
-
-/* Keyframes for infinite horizontal scroll */
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
+/* No extra styles needed, Tailwind columns handles the masonry layout */
 </style>

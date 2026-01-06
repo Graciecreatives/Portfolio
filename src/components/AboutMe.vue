@@ -1,72 +1,166 @@
 <template>
-  <section class="flex flex-col md:flex-row gap-10 md:px-10 px-4 py-10">
+  <section class="flex flex-col md:flex-row gap-12 md:gap-16 md:px-12 px-6 py-16 bg-white/50 backdrop-blur-sm rounded-3xl my-10 mx-4 md:mx-10 shadow-sm border border-white/40">
     <!-- Left Content -->
-    <div class="md:w-1/2 w-full px-2 md:px-5">
-      <h2 class="text-4xl mb-5 font-[900] mb-10 text-[#9318FA]">ABOUT ME</h2>
+    <div class="md:w-1/2 w-full flex flex-col justify-center" data-aos="fade-right">
+      <div class="mb-8">
+        <h2 class="text-4xl md:text-5xl font-black text-[#9318FA] tracking-tight mb-2">ABOUT ME</h2>
+        <div class="h-1.5 w-20 bg-[#9318FA] rounded-full"></div>
+      </div>
 
-      <!-- Tabs -->
-      <div class="flex gap-6 mb-6 overflow-x-auto">
+      <!-- Modern Pill Tabs -->
+      <div class="flex gap-4 mb-8 overflow-x-auto pb-2 scrollbar-hide">
         <button
           v-for="tab in tabs"
           :key="tab"
           @click="activeTab = tab"
-          class="pb-2 text-lg font-medium whitespace-nowrap transition-colors"
+          class="px-6 py-2.5 rounded-full text-sm f md:text-base font-bold transition-all duration-300 transform"
           :class="activeTab === tab
-            ? 'text-purple-700 border-b-2 border-purple-700'
-            : 'text-gray-500 hover:text-purple-700'"
-        >{{ tab }}</button>
-      </div>
-
-      <!-- Tab Content -->
-      <div v-if="activeTab === 'MYSELF'">
-        <p
-          class="leading-8 mb-5 text-justify"
-        >Hi, I’m Egbewale Precious Grace, a passionate frontend developer and creative website designer dedicated to transforming ideas into visually stunning and user friendly digital experiences. I specialize in building responsive, high performance websites using modern technologies like Vue.js, Tailwind CSS, and other cutting-edge tools. Beyond frontend design, I’m expanding my expertise into full-stack and blockchain development to create more scalable and future-ready solutions. I’m driven by innovation, attention to detail, and the desire to help brands and entrepreneurs establish a strong online presence that truly reflects their vision.</p>
-        <router-link
-          to="#"
-          class="bg-[#9318FA] text-white px-5 py-2 rounded-md inline-block hover:bg-purple-800 transition-colors duration-300"
-        >Get in Touch</router-link>
-      </div>
-
-      <div v-if="activeTab === 'EDUCATION'">
-        <p
-          class="leading-8 mb-5 text-justify"
-        >I’m currently in my 3rd year of Computer Science at Tai Solarin University of Education (TASUED), where I’m building a strong foundation in programming and problem-solving. I specialize in frontend web development using Vuejs, Reactsjs, HTML, CSS, and JavaScript, with a focus on crafting intuitive, user-friendly interfaces using Figma. I’ve also completed multiple online certifications in web design and development. Additionally, I’m exploring Web3 technologies, including blockchain and decentralized applications (dApps), to expand my technical expertise. My goal is to leverage my skills and creativity to build innovative digital solutions that make a real-world impact.</p>
-      </div>
-
-      <div v-if="activeTab === 'SKILLS'">
-        <div
-          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 overflow-x-auto"
+            ? 'bg-[#9318FA] text-white shadow-lg scale-105'
+            : 'bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-[#9318FA]'"
         >
-          <SkillCircle name="Vue.js" :percentage="90" color="#41B883" />
-          <SkillCircle name="React.js" :percentage="75" color="#61DBFB" />
-          <SkillCircle name="Tailwind" :percentage="92" color="#38B2AC" />
-          <SkillCircle name="HTML" :percentage="90" color="#E34F26" />
-          <SkillCircle name="CSS" :percentage="80" color="#1572B6" />
-          <SkillCircle name="JavaScript" :percentage="75" color="#F7DF1E" />
-          <SkillCircle name="Node.js" :percentage="70" color="#FFCD00" />
-          <SkillCircle name="Express.js" :percentage="65" color="#FFCD00" />
-          <SkillCircle name="MongoDB" :percentage="85" color="#47A248" />
-          <SkillCircle name="Solidity" :percentage="75" color="#0db7ed" />
-          <SkillCircle name="Git" :percentage="75" color="#F05032" />
-          <SkillCircle name="Github" :percentage="80" color="#181717" />
-          <SkillCircle name="Wordpress" :percentage="80" color="#21759B" />
-          <SkillCircle name="Wix" :percentage="80" color="#1F1F1F" />
-        </div>
+          {{ tab }}
+        </button>
       </div>
+
+      <!-- Tab Content with Transition -->
+      <transition name="fade" mode="out-in">
+        <div :key="activeTab" class="min-h-[300px]">
+          
+          <!-- MYSELF TAB -->
+          <div v-if="activeTab === 'MYSELF'" class="space-y-6">
+            <p class="text-gray-600 leading-loose text-lg font-light text-left">
+              Hi, I’m <strong>Egbewale Precious Grace</strong>, a creative full-stack developer and website designer passionate about building modern, scalable websites and web applications that deliver exceptional user experiences. I specialize in developing responsive, high-performance digital products using modern technologies such as <strong>Vue.js, Tailwind CSS</strong>, and other cutting-edge tools.
+            </p>
+            <p class="text-gray-600 leading-loose text-lg font-light text-left">
+              Beyond development, I bring a strong creative and strategic mindset to every project, ensuring each solution is visually engaging, functional, and aligned with business goals. I am currently the <strong>NITHUB Campus Assistant Lead</strong> and a <strong>Cowrywise Ambassador</strong>.
+            </p>
+            <p class="text-gray-600 leading-loose text-lg font-light text-left">
+              Driven by innovation, attention to detail, and impact, I work with brands, startups, and entrepreneurs to build future-ready digital solutions.
+            </p>
+            
+            <div class="pt-4">
+               <router-link
+                to="#"
+                class="inline-flex items-center gap-2 bg-[#9318FA] text-white px-8 py-3 rounded-full font-semibold shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 hover:-translate-y-1 transition-all duration-300"
+              >
+                <span>Get in Touch</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </router-link>
+            </div>
+          </div>
+
+          <!-- EDUCATION TAB -->
+          <div v-if="activeTab === 'EDUCATION'" class="space-y-6">
+            <h3 class="text-xl font-bold text-gray-800">Tai Solarin University of Education (TASUED)</h3>
+            <p class="text-gray-600 leading-loose text-lg font-light text-left">
+              I’m currently in my <strong>3rd year of Computer Science</strong>, building a strong foundation in programming and problem-solving.
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-600 text-lg">
+              <li>Frontend Development (Vue, React, HTML, CSS)</li>
+              <li>UI/UX Design (Figma)</li>
+              <li>Web3 & Blockchain Technologies</li>
+            </ul>
+          </div>
+
+          <!-- SKILLS TAB -->
+          <div v-if="activeTab === 'SKILLS'">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+              <div
+                v-for="(skill, index) in skills"
+                :key="index"
+                class="flex flex-col items-center gap-3 group p-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300 border border-transparent hover:border-gray-100"
+              >
+                <div class="h-16 w-16 flex items-center justify-center bg-white rounded-full shadow-sm group-hover:scale-110 transition-transform duration-300 p-3 border border-gray-50">
+                  <img :src="skill.logo" :alt="skill.name" class="w-full h-full object-contain">
+                </div>
+                <span class="text-sm font-bold text-gray-600 group-hover:text-[#9318FA] transition-colors">{{ skill.name }}</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </transition>
     </div>
 
-    <!-- Right Image -->
-    <div class="md:w-1/2 w-full px-2 md:px-5 flex justify-center items-center">
-      <img src="../assets/Images/Meee.png" class="w-full h-auto rounded-lg object-cover" alt="Grace" />
+    <!-- Right Image (Carousel) -->
+    <div class="md:w-1/2 w-full flex justify-center items-center relative h-[600px] md:h-[650px] overflow-hidden rounded-2xl shadow-2xl border-4 border-white/50" data-aos="fade-left">
+      <div class="absolute z-10 pointer-events-none"></div>
+      <div
+        v-for="(img, index) in aboutImages"
+        :key="index"
+        class="absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out transform scale-105"
+        :class="{'opacity-100 z-0': activeImage === index, 'opacity-0 -z-10': activeImage !== index}"
+      >
+        <img :src="img" class="w-full h-full object-cover transition-transform duration-[10000ms] ease-linear hover:scale-110" alt="Grace" />
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import SkillCircle from "./skillCircle.vue";
+import { ref, onMounted, onUnmounted } from "vue";
+
+// Import Images
+import Img1 from '../assets/Images/ADE_88903.jpg'
+import Img2 from '../assets/Images/ADE_88543.jpg'
+import Img3 from '../assets/Images/ADE_88383.jpg'
+import Img4 from '../assets/Images/ADE_88703.jpg'
 
 const tabs = ["MYSELF", "EDUCATION", "SKILLS"];
 const activeTab = ref("MYSELF");
+
+// Carousel Logic
+const aboutImages = ref([Img1, Img2, Img3, Img4]);
+const activeImage = ref(0);
+let intervalId;
+
+onMounted(() => {
+  intervalId = setInterval(() => {
+    activeImage.value = (activeImage.value + 1) % aboutImages.value.length;
+  }, 4000); // Change image every 4 seconds
+});
+
+onUnmounted(() => {
+  clearInterval(intervalId);
+});
+
+const skills = ref([
+  { name: 'Vue.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
+  { name: 'React.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+  { name: 'Tailwind', logo: '/src/assets/tailwingLogo.png' },
+  { name: 'HTML', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+  { name: 'CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+  { name: 'JavaScript', logo: '/src/assets/javascriptLogo.png' },
+  { name: 'Node.js', logo: '/src/assets/nodeLogo.png' },
+  { name: 'Express.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
+  { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+  { name: 'Solidity', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg' },
+  { name: 'Git', logo: '/src/assets/gitLogo.png' },
+  { name: 'GitHub', logo: '/src/assets/githubLogo.png' },
+  { name: 'WordPress', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg' },
+  { name: 'Wix', logo: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Wix.com_website_logo.svg' }
+]);
 </script>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Hide scrollbar for tabs */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+</style>
