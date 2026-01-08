@@ -72,19 +72,6 @@
         </div>
       </div>
 
-      <!-- View More Link -->
-       <div class="text-center mt-16">
-        <router-link
-          to="#"
-          class="inline-flex items-center gap-2 text-gray-500 hover:text-[#9318FA] font-medium transition-colors hover:underline underline-offset-4"
-        >
-          View More Projects
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </router-link>
-      </div>
-
     </div>
   </section>
 </template>
@@ -130,7 +117,7 @@ const projects = ref([
     name: "De Odedeji Family Carol Virtual Program",
     description:
       "De Odedeji Family Carol Service website is a project to showcase the annual family christmas carol service, which includes bible, hymns and order of service",
-    liveLink: "https://odedeji,vercel.app",
+    liveLink: "https://odedeji.vercel.app",
     skills: ["Vue.js", "Tailwind CSS"],
   },
   {
@@ -154,7 +141,7 @@ const projects = ref([
     name: "E-Attendance Project",
     description:
       "E-Attendance project is a fullstack web project which i collaborated with team to simplify the way Attendance is being taken in schools using a Geofenced Logic. The project features a responsive and intuitive interface, secure data handling, and interactive functionality.",
-    liveLink: "https://e-attendance.com.ng/",
+    liveLink: "https://e-attendance.com.ng",
     skills: ["Vuejs", "TailwindCss", "Python", "Django", "MongoDb"],    
   },
   {
@@ -164,6 +151,14 @@ const projects = ref([
       "A birthday website I developed to provide a seamless shopping experience for users. Built with Vue.js and Tailwind CSS, the website showcases a responsive and intuitive interface",
     liveLink: "https://olamiposi.vercel.app/",
     skills: ["Vuejs", "TailwindCss"],    
+  },
+   {
+    id: 10,
+    name: "A Makeup Artist Rate Card",
+    description:
+      "A Makeup Artist Rate Card is a project developed for a makeup artiste, to showcase their price and also their terms and policy, while implementing the whatsapp api and EmailJs",
+    liveLink: "https://geminisignature.vercel.app/",
+    skills: ["Vuejs", "TailwindCss", "WhatsappApi", "EmailJs"],    
   }
 ]);
 </script>
