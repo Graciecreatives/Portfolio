@@ -91,10 +91,10 @@
 </template>
 
 <script setup>
-import cowrywise from '../assets/Images/cowrywiselogo.png'
-import meta from '../assets/Images/meta.png'
-import nithub from '../assets/Images/nithub.png'
-import tta from '../assets/Images/tta.png'
+import cowrywise from '../assets/Images/logos/cowrywiselogo.png'
+import meta from '../assets/Images/logos/meta.png'
+import nithub from '../assets/Images/logos/nithub.png'
+import tta from '../assets/Images/logos/tta.png'
 
 const experiences = [
   {

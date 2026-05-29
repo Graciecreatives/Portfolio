@@ -1,9 +1,9 @@
 <script setup>
-import AboutMe from '@/components/AboutMe.vue'
+import MyGallery from '@/components/myGallery.vue'
 </script>
 
 <template>
   <main class="pageView">
-    <AboutMe />
+    <MyGallery />
   </main>
 </template>

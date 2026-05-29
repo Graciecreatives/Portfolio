@@ -1,9 +1,9 @@
 <script setup>
-import AboutMe from '@/components/AboutMe.vue'
+import ContactPage from '@/components/contactPage.vue'
 </script>
 
 <template>
   <main class="pageView">
-    <AboutMe />
+    <ContactPage />
   </main>
 </template>

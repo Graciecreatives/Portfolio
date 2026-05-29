@@ -1,9 +1,9 @@
 <script setup>
-import AboutMe from '@/components/AboutMe.vue'
+import MyExperience from '@/components/myExperience.vue'
 </script>
 
 <template>
   <main class="pageView">
-    <AboutMe />
+    <MyExperience />
   </main>
 </template>

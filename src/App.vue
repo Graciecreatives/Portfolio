@@ -1,17 +1,16 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-
+import { RouterView } from 'vue-router'
+import PortfolioHeader from '@/components/PortfolioHeader.vue'
+import Footer from '@/components/theFooter.vue'
 </script>
 
 <template>
-  <div>
-
-<RouterView />
+  <div class="min-h-screen">
+    <PortfolioHeader />
+    <RouterView />
+    <Footer />
   </div>
-
-
 </template>
 
 <style scoped>
-
 </style>

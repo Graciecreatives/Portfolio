@@ -40,7 +40,7 @@
             
             <div class="pt-4">
                <router-link
-                to="#"
+                to="/contact"
                 class="inline-flex items-center gap-2 bg-[#9318FA] text-white px-8 py-3 rounded-full font-semibold shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 hover:-translate-y-1 transition-all duration-300"
               >
                 <span>Get in Touch</span>
@@ -103,10 +103,15 @@
 import { ref, onMounted, onUnmounted } from "vue";
 
 // Import Images
-import Img1 from '../assets/Images/ADE_88903.webp'
-import Img2 from '../assets/Images/ADE_88543.webp'
-import Img3 from '../assets/Images/ADE_88383.webp'
-import Img4 from '../assets/Images/ADE_88703.webp'
+import Img1 from '../assets/Images/about/ADE_88903.webp'
+import Img2 from '../assets/Images/about/ADE_88543.webp'
+import Img3 from '../assets/Images/about/ADE_88383.webp'
+import Img4 from '../assets/Images/about/ADE_88703.webp'
+import TailwindLogo from '../assets/icons/tools/tailwingLogo.webp'
+import JavaScriptLogo from '../assets/icons/tools/javascriptLogo.webp'
+import NodeLogo from '../assets/icons/tools/nodeLogo.webp'
+import GitLogo from '../assets/icons/tools/gitLogo.webp'
+import GitHubLogo from '../assets/icons/tools/githubLogo.webp'
 
 const tabs = ["MYSELF", "EDUCATION", "SKILLS"];
 const activeTab = ref("MYSELF");
@@ -129,16 +134,16 @@ onUnmounted(() => {
 const skills = ref([
   { name: 'Vue.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
   { name: 'React.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-  { name: 'Tailwind', logo: '/src/assets/tailwingLogo.webp' },
+  { name: 'Tailwind', logo: TailwindLogo },
   { name: 'HTML', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
   { name: 'CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-  { name: 'JavaScript', logo: '/src/assets/javascriptLogo.webp' },
-  { name: 'Node.js', logo: '/src/assets/nodeLogo.webp' },
+  { name: 'JavaScript', logo: JavaScriptLogo },
+  { name: 'Node.js', logo: NodeLogo },
   { name: 'Express.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
   { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
   { name: 'Solidity', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg' },
-  { name: 'Git', logo: '/src/assets/gitLogo.webp' },
-  { name: 'GitHub', logo: '/src/assets/githubLogo.webp' },
+  { name: 'Git', logo: GitLogo },
+  { name: 'GitHub', logo: GitHubLogo },
   { name: 'WordPress', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg' },
   { name: 'Wix', logo: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Wix.com_website_logo.svg' }
 ]);

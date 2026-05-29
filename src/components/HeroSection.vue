@@ -1,9 +1,11 @@
 <template>
   <main>
-    <section class="heroSection min-h-screen flex flex-col justify-center items-center text-center relative overflow-hidden pt-40 pb-20">
-      
-      <!-- Animated Small Particles -->
-      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <section class="heroSection min-h-screen relative overflow-hidden pt-32 pb-16 md:pt-36">
+      <div class="heroGridFloor"></div>
+      <div class="heroGridHorizon"></div>
+      <div class="heroVignette"></div>
+
+      <div class="absolute inset-0 overflow-hidden pointer-events-none z-10">
         <div 
           v-for="(particle, index) in particles" 
           :key="index"
@@ -12,64 +14,45 @@
         ></div>
       </div>
 
-      <!-- Content Container -->
-      <div class="z-20 px-5 max-w-4xl w-full flex flex-col items-center gap-6 mb-16 relative">
-        
-        <!-- Badge -->
-        <div data-aos="fade-down" class="bg-white/20 backdrop-blur-md border border-white/30 px-4 py-1.5 text-white text-sm md:text-base rounded-full shadow-lg hover:scale-105 transition-transform">
-          Available For Projects
-        </div>
+      <div class="relative z-20 mx-auto grid min-h-[calc(100vh-9rem)] w-full max-w-7xl grid-cols-1 items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1.02fr_0.98fr]">
+        <div class="heroCopy text-left">
+          <div data-aos="fade-down" class="availabilityBadge">
+            <span></span>
+            Available For Projects
+          </div>
 
-        <!-- Heading -->
-        <h1 data-aos="fade-up" class="text-4xl md:text-6xl font-bold leading-tight text-white drop-shadow-lg">
-          Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-orange-400 to-yellow-400 animate-pulse">Precious Grace Egbewale</span> <br>
-          <span class="text-2xl md:text-4xl text-gray-200 font-medium">A Fullstack Developer</span>
-        </h1>
+          <h1 data-aos="fade-up" class="heroTitle mt-7 max-w-4xl text-5xl font-black leading-[0.98] tracking-normal text-white sm:text-6xl lg:text-7xl">
+            Building polished
+            <span class="gradientText block">fullstack products</span>
+            with clean code.
+          </h1>
 
-        <!-- Description -->
-        <p data-aos="fade-up" data-aos-delay="100" class="text-base md:text-lg text-gray-100 max-w-2xl drop-shadow-sm font-light">
-          I build seamless, scalable, and user-focused digital experiences that merge creativity with functionality. From intuitive websites and web apps to decentralized solutions, I love turning ideas into innovation through clean, efficient code.
-        </p>
+          <p data-aos="fade-up" data-aos-delay="100" class="heroDescription mt-6 max-w-2xl text-base leading-8 text-violet-100/80 sm:text-lg">
+            Hi, I'm Precious Grace Egbewale. I design and build scalable web experiences, dashboards, ecommerce products, and modern interfaces that feel fast, thoughtful, and production-ready.
+          </p>
 
-        <!-- CTAs -->
-        <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col md:flex-row gap-4 mt-2">
-          <router-link to="" class="viewWorks text-[#9318FA] bg-white hover:bg-gray-100 py-3 px-8 rounded-full font-semibold shadow-md hover:shadow-xl transition-all">
-            View My Works
-          </router-link>
-          <router-link to="" class="contactMe text-white border border-white hover:bg-white/20 py-3 px-8 rounded-full font-semibold transition-all">
-            Contact Me
-          </router-link>
-        </div>
-
-        <!-- Tech Stack Logos (Moved Below Text/CTAs) -->
-        <div data-aos="fade-in" data-aos-delay="300" class="flex flex-wrap justify-center gap-4 my-2 max-w-2xl mt-4">
-          <div 
-            v-for="(tech, index) in techStacks" 
-            :key="index" 
-            class="flex flex-col items-center gap-1 group"
-            :title="tech.name"
-          >
-            <img 
-              :src="tech.logo" 
-              :alt="tech.name" 
-              class="h-10 w-10 md:h-12 md:w-12 object-contain hover:scale-110 transition-transform bg-white/90 rounded-full p-1 border border-white/20 shadow-md"
-              :class="{'bg-black': tech.name === 'GitHub' || tech.name === 'Next.js'}"
-              loading="lazy"
-            />
+          <div data-aos="fade-up" data-aos-delay="200" class="heroActions mt-8 flex flex-col gap-4 sm:flex-row">
+            <router-link to="/projects" class="primaryCta">
+              View My Works
+            </router-link>
+            <router-link to="/contact" class="secondaryCta">
+              Contact Me
+            </router-link>
           </div>
         </div>
-      </div>
 
-      <!-- Work Carousel -->
-      <div class="w-full mt-auto relative z-20">
-        <div class="carousel-track flex gap-6 py-4">
-          <!-- Render Projects Twice for Infinite Loop -->
-          <div 
-            v-for="(project, index) in [...projects, ...projects]" 
-            :key="index"
-            class="carousel-item flex-shrink-0 w-80 md:w-96 h-64 md:h-72 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20"
-          >
-            <img :src="project.image" :alt="project.title" class="w-full h-full object-cover" loading="lazy">
+        <div data-aos="zoom-in" data-aos-delay="150" class="heroPortraitWrap">
+          <div class="portraitPanel">
+            <img :src="HeroImage" alt="Precious Grace Egbewale" class="heroPortrait" loading="eager">
+            <div class="portraitFade"></div>
+          </div>
+          <div class="floatingMetric metricTop">
+            <strong>Fullstack</strong>
+            <span>Vue / React / Node</span>
+          </div>
+          <div class="floatingMetric metricBottom">
+            <strong>Clean UI</strong>
+            <span>Fast, responsive builds</span>
           </div>
         </div>
       </div>
@@ -79,55 +62,23 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import HeroImage from '../assets/Images/portraits/My picture1.png';
 
-// Tech Stacks Array
-const techStacks = ref([
-  { name: 'HTML', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-  { name: 'CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-  { name: 'JavaScript', logo: '/src/assets/javascriptLogo.webp' },
-  { name: 'Node.js', logo: '/src/assets/nodeLogo.webp' },
-  { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-  { name: 'Vue.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
-  { name: 'Tailwind CSS', logo: '/src/assets/tailwingLogo.webp' },
-  { name: 'Bootstrap', logo: '/src/assets/bootstrapLogo.webp' },
-  { name: 'Express.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
-  { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-  { name: 'Git', logo: '/src/assets/gitLogo.webp' },
-  { name: 'GitHub', logo: '/src/assets/githubLogo.webp' },
-  { name: 'WordPress', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg' },
-  { name: 'Wix', logo: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Wix.com_website_logo.svg' }
-]);
-
-import CampusCartImage from '../assets/Images/campuscart.webp'
-import EAttendanceImage from '../assets/Images/e-attendaceimg.webp'
-import GracieFeature from '../assets/Images/GracieFeatur.webp'
-import Foodieland from '../assets/Images/foodieland.webp'
-import CartDashboard from '../assets/Images/dashboard.webp'
-
-const projects = ref([
-  { image: CampusCartImage, title: 'Project 1' },
-  { image: EAttendanceImage, title: 'Project 2' },
-  { image: GracieFeature, title: 'Project 3' },
-  { image: Foodieland, title: 'Project 4' },
-  { image: CartDashboard, title: 'Project 5' },
-]);
-
-// Particle Generation Logic
 const particles = ref([]);
 
-const generateParticles = (count = 35) => {
+const generateParticles = (count = 48) => {
   const newParticles = [];
   for (let i = 0; i < count; i++) {
-    const size = Math.random() * 4 + 2 + 'px'; // 2px to 6px
+    const size = Math.random() * 2.5 + 1 + 'px';
     newParticles.push({
       style: {
         width: size,
         height: size,
         top: Math.random() * 100 + '%',
         left: Math.random() * 100 + '%',
-        opacity: Math.random() * 0.5 + 0.1, // 0.1 to 0.6 opacity
-        animationDelay: Math.random() * 5 + 's',
-        animationDuration: Math.random() * 10 + 10 + 's', // 10s to 20s
+        opacity: Math.random() * 0.55 + 0.18,
+        animationDelay: Math.random() * 8 + 's',
+        animationDuration: Math.random() * 12 + 14 + 's',
       }
     });
   }
@@ -141,40 +92,235 @@ onMounted(() => {
 
 <style scoped>
 .heroSection {
-  background: linear-gradient(135deg, #2D0355 0%, #5B1296 50%, #1E0238 100%);
+  background:
+    radial-gradient(circle at 33% 43%, rgba(168, 85, 247, 0.22), transparent 31rem),
+    radial-gradient(circle at 68% 28%, rgba(236, 72, 153, 0.14), transparent 29rem),
+    linear-gradient(135deg, #2d0057 0%, #13001f 45%, #03020a 100%);
   position: relative;
+  isolation: isolate;
 }
 
-/* CAROUSEL ANIMATION */
-.carousel-track {
+.heroSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image:
+    linear-gradient(rgba(168, 85, 247, 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.26) 1px, transparent 1px);
+  background-size: 68px 68px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.98), rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 0 14px rgba(168, 85, 247, 0.72));
+  opacity: 0.82;
+  animation: gridDrift 18s linear infinite;
+  pointer-events: none;
+}
+
+.heroGridFloor {
+  position: absolute;
+  left: -12%;
+  right: -12%;
+  bottom: -9%;
+  height: 50%;
+  z-index: 2;
+  transform: perspective(720px) rotateX(62deg);
+  transform-origin: bottom center;
+  background-image:
+    linear-gradient(rgba(168, 85, 247, 0.68) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(236, 72, 153, 0.5) 1px, transparent 1px);
+  background-size: 62px 62px;
+  box-shadow: inset 0 45px 90px rgba(168, 85, 247, 0.22), 0 0 88px rgba(168, 85, 247, 0.38);
+  animation: floorMove 11s linear infinite;
+  pointer-events: none;
+}
+
+.heroGridFloor::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 186px 186px;
+  filter: drop-shadow(0 0 12px rgba(236, 72, 153, 0.35));
+}
+
+.heroGridHorizon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 35%;
+  z-index: 3;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.78), rgba(236, 72, 153, 0.42), transparent);
+  box-shadow: 0 0 32px rgba(168, 85, 247, 0.76), 0 0 78px rgba(236, 72, 153, 0.35);
+  opacity: 0.82;
+  pointer-events: none;
+}
+
+.heroVignette {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background:
+    linear-gradient(to bottom, rgba(3, 2, 10, 0.08), transparent 30%, rgba(3, 2, 10, 0.72)),
+    radial-gradient(circle at center, transparent 0, rgba(3, 2, 10, 0.32) 78%);
+  pointer-events: none;
+}
+
+.availabilityBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 28px rgba(168, 85, 247, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.58rem 1rem;
+  backdrop-filter: blur(18px);
+}
+
+.availabilityBadge span {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: #a855f7;
+  box-shadow: 0 0 18px #a855f7;
+}
+
+.gradientText {
+  background: linear-gradient(92deg, #a855f7 0%, #ec4899 48%, #fb923c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 38px rgba(168, 85, 247, 0.22);
+}
+
+.primaryCta,
+.secondaryCta {
+  display: inline-flex;
+  min-height: 3.35rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.85rem 1.65rem;
+  font-weight: 800;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease;
+}
+
+.primaryCta {
+  background: linear-gradient(100deg, #a855f7, #ec4899 58%, #fb923c);
+  color: #fff;
+  box-shadow: 0 0 28px rgba(168, 85, 247, 0.48), 0 15px 42px rgba(236, 72, 153, 0.2);
+}
+
+.secondaryCta {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+}
+
+.primaryCta:hover,
+.secondaryCta:hover {
+  transform: translateY(-3px);
+}
+
+.primaryCta:hover {
+  box-shadow: 0 0 42px rgba(168, 85, 247, 0.62), 0 18px 48px rgba(236, 72, 153, 0.27);
+}
+
+.secondaryCta:hover {
+  border-color: rgba(168, 85, 247, 0.7);
+  background: rgba(168, 85, 247, 0.14);
+  box-shadow: 0 0 26px rgba(168, 85, 247, 0.24);
+}
+
+.heroPortraitWrap {
+  position: relative;
+  min-height: 34rem;
   display: flex;
-  width: max-content;
-  animation: scroll 25s linear infinite;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-1720px)); 
-  }
+.portraitPanel {
+  position: relative;
+  width: min(31rem, 86vw);
+  min-height: 32rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 2rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(168, 85, 247, 0.08) 42%, rgba(255, 255, 255, 0.03));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 0 55px rgba(168, 85, 247, 0.22),
+    0 32px 90px rgba(0, 0, 0, 0.36);
+  backdrop-filter: blur(18px);
 }
 
-.carousel-track:hover {
-  animation-play-state: paused;
+.heroPortrait {
+  position: relative;
+  z-index: 2;
+  width: min(29rem, 84vw);
+  max-height: 33rem;
+  object-fit: contain;
+  filter: drop-shadow(0 0 28px rgba(168, 85, 247, 0.38));
 }
 
-@media (min-width: 768px) {
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-2040px)); }
-  }
+.portraitFade {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 3;
+  height: 32%;
+  background: linear-gradient(to top, rgba(9, 2, 20, 0.92), transparent);
+  pointer-events: none;
 }
 
-/* SMALL PARTICLE ANIMATION */
+.floatingMetric {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 1.1rem;
+  background: rgba(17, 8, 34, 0.58);
+  padding: 0.85rem 1rem;
+  color: #fff;
+  box-shadow: 0 16px 46px rgba(0, 0, 0, 0.28), 0 0 24px rgba(168, 85, 247, 0.2);
+  backdrop-filter: blur(18px);
+}
+
+.floatingMetric strong {
+  font-size: 0.95rem;
+}
+
+.floatingMetric span {
+  color: rgba(237, 233, 254, 0.72);
+  font-size: 0.78rem;
+}
+
+.metricTop {
+  top: 14%;
+  left: 0;
+  animation: metricFloat 5.5s ease-in-out infinite;
+}
+
+.metricBottom {
+  right: 0;
+  bottom: 15%;
+  animation: metricFloat 6s ease-in-out 0.8s infinite;
+}
+
 .particle {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.65), 0 0 18px rgba(168, 85, 247, 0.45);
   animation: floatParticle linear infinite;
 }
 
@@ -190,8 +336,127 @@ onMounted(() => {
     opacity: 1;
   }
   100% {
-    transform: translateY(-100px) translateX(50px);
+    transform: translateY(-120px) translateX(42px) scale(0.7);
     opacity: 0;
+  }
+}
+
+@keyframes gridDrift {
+  to {
+    background-position: 68px 68px;
+  }
+}
+
+@keyframes floorMove {
+  to {
+    background-position: 0 62px, 62px 0;
+  }
+}
+
+@keyframes metricFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .heroCopy {
+    text-align: center;
+  }
+
+  .availabilityBadge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroPortraitWrap {
+    min-height: 30rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroSection {
+    padding-top: 7.25rem;
+    padding-bottom: 3rem;
+  }
+
+  .heroSection > .relative {
+    gap: 2rem;
+    min-height: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .heroSection::before {
+    background-size: 52px 52px;
+  }
+
+  .availabilityBadge {
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    padding: 0.48rem 0.8rem;
+  }
+
+  .availabilityBadge span {
+    width: 0.45rem;
+    height: 0.45rem;
+  }
+
+  .heroTitle {
+    max-width: 19.5rem;
+    margin-top: 1.35rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(1.95rem, 9.5vw, 2.45rem);
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  .heroDescription {
+    max-width: 21rem;
+    margin-top: 1.15rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.96rem;
+    line-height: 1.72;
+    color: rgba(237, 233, 254, 0.78);
+  }
+
+  .heroActions {
+    width: min(100%, 21rem);
+    margin-top: 1.55rem;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 0.8rem;
+  }
+
+  .primaryCta,
+  .secondaryCta {
+    min-height: 3rem;
+    width: 100%;
+    padding: 0.78rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .heroGridFloor {
+    height: 36%;
+    background-size: 48px 48px;
+  }
+
+  .heroPortraitWrap {
+    min-height: 26rem;
+  }
+
+  .portraitPanel {
+    min-height: 26rem;
+    border-radius: 1.4rem;
+  }
+
+  .floatingMetric {
+    display: none;
   }
 }
 </style>

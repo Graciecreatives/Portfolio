@@ -3,3 +3,9 @@ body{
    font-family: "Rethink Sans", sans-serif;
    overflow-x: hidden;
 }
+
+.pageView {
+   min-height: 100vh;
+   padding-top: 7.5rem;
+   background: #fff;
+}

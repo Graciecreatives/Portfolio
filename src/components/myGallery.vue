@@ -44,22 +44,22 @@
 
 <script setup>
 import { ref } from "vue";
-import Image1 from '@/assets/Images/DSC00168.webp'
-import Image2 from '@/assets/Images/DSC00169.webp'
-import Image3 from '@/assets/Images/DSC09180.webp'
-import Image4 from '@/assets/Images/DSC09320.JPG.webp'
-import Image5 from '@/assets/Images/DSC09534.webp'
-import Certificate1 from '@/assets/Images/certificate.webp'
-import safeOnline1 from '@/assets/Images/122A2989.webp'
-import safeOnline3 from '@/assets/Images/122A3021.webp'
-import safeOnline4 from '@/assets/Images/122A3095.webp'
-import safeOnline5 from '@/assets/Images/122A3103.webp'
-import safeOnline6 from '@/assets/Images/122A3174.webp'
-import safeOnline7 from '@/assets/Images/WhatsApp Image 2025-11-04 at 15.21.52_c639e5fe.webp'
-import Hackathon1 from '@/assets/Images/challenge2.webp'
-import Hackathon2 from '@/assets/Images/challenge3.webp'
-import Hackathon3 from '@/assets/Images/challenge4.webp'
-import Osd from '@/assets/Images/osd1.webp'
+import Image1 from '@/assets/Images/gallery/DSC00168.webp'
+import Image2 from '@/assets/Images/gallery/DSC00169.webp'
+import Image3 from '@/assets/Images/gallery/DSC09180.webp'
+import Image4 from '@/assets/Images/gallery/DSC09320.JPG.webp'
+import Image5 from '@/assets/Images/gallery/DSC09534.webp'
+import Certificate1 from '@/assets/Images/gallery/certificate.webp'
+import safeOnline1 from '@/assets/Images/gallery/122A2989.webp'
+import safeOnline3 from '@/assets/Images/gallery/122A3021.webp'
+import safeOnline4 from '@/assets/Images/gallery/122A3095.webp'
+import safeOnline5 from '@/assets/Images/gallery/122A3103.webp'
+import safeOnline6 from '@/assets/Images/gallery/122A3174.webp'
+import safeOnline7 from '@/assets/Images/gallery/WhatsApp Image 2025-11-04 at 15.21.52_c639e5fe.webp'
+import Hackathon1 from '@/assets/Images/gallery/challenge2.webp'
+import Hackathon2 from '@/assets/Images/gallery/challenge3.webp'
+import Hackathon3 from '@/assets/Images/gallery/challenge4.webp'
+import Osd from '@/assets/Images/gallery/osd1.webp'
 
 
 const images = ref([
