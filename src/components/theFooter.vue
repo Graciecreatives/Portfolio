@@ -1,21 +1,13 @@
 <template>
   <footer class="siteFooter">
-    <div class="footerGlow footerGlowLeft"></div>
-    <div class="footerGlow footerGlowRight"></div>
-
     <div class="footerInner">
-      <div class="footerHeader" data-aos="fade-up">
-        <span class="footerEyebrow">Available for selected projects</span>
-        <h2>Let’s build something polished, fast, and useful.</h2>
-      </div>
-
-      <div class="footerGrid" data-aos="fade-up" data-aos-delay="80">
-        <div class="footerCard footerBrand">
+      <div class="footerGrid" data-aos="fade-up">
+        <div class="footerBrand">
           <router-link to="/" class="brandMark">
-            <img src="../assets/brand/Logo.png" alt="Gracie Creatives" loading="lazy">
+            <img src="../assets/brand/Logo.webp" alt="Gracie Creatives" loading="lazy">
           </router-link>
           <p>
-            Fullstack developer building modern websites, web apps, dashboards, and brand experiences with clean interfaces and reliable code.
+            Fullstack developer helping founders and growing teams create responsive websites, dashboards, ecommerce platforms, and web applications.
           </p>
 
           <div class="socialLinks" aria-label="Social links">
@@ -31,26 +23,25 @@
           </div>
         </div>
 
-        <nav class="footerCard footerLinks" aria-label="Footer navigation">
+        <nav class="footerLinks" aria-label="Footer navigation">
           <h3>Explore</h3>
           <router-link v-for="link in navLinks" :key="link.to" :to="link.to">{{ link.label }}</router-link>
         </nav>
 
-        <div class="footerCard footerLinks">
-          <h3>Focus</h3>
-          <span>Fullstack Apps</span>
-          <span>Portfolio Websites</span>
+        <div class="footerLinks">
+          <h3>Services</h3>
+          <span>Startup Websites</span>
+          <span>Web Applications</span>
+          <span>Dashboards</span>
+          <span>Ecommerce Platforms</span>
           <span>UI Development</span>
-          <span>WordPress</span>
-          <span>Web3 Interfaces</span>
         </div>
 
-        <div class="footerCard footerContact">
-          <h3>Start a Project</h3>
-          <p>Have an idea, brand, or product to build? Send a message and let’s shape it properly.</p>
-          <router-link to="/contact" class="footerMainCta">Contact Me</router-link>
+        <div class="footerContact">
+          <h3>Contact</h3>
           <a href="mailto:graceegbewale@gmail.com" class="contactLink">graceegbewale@gmail.com</a>
           <a href="tel:+2348125911966" class="contactLink">+234 812 591 1966</a>
+          <router-link to="/contact" class="footerMainCta">Send a Message</router-link>
         </div>
       </div>
 
@@ -67,7 +58,7 @@ const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'Projects', to: '/projects' },
-  { label: 'Experience', to: '/experience' },
+  { label: 'Experience', to: '/about#experience' },
   { label: 'Gallery', to: '/gallery' },
   { label: 'Contact', to: '/contact' },
 ]
@@ -100,10 +91,12 @@ const socials = [
 .siteFooter {
   position: relative;
   overflow: hidden;
-  padding: 5rem 1.25rem 1.75rem;
+  padding: 4rem 1.25rem 1.5rem;
   color: #fff;
   background:
-    linear-gradient(180deg, #05020b 0%, #10031f 52%, #03020a 100%);
+    radial-gradient(circle at 10% 0%, rgba(168, 85, 247, 0.16), transparent 26rem),
+    radial-gradient(circle at 88% 30%, rgba(34, 211, 238, 0.1), transparent 24rem),
+    linear-gradient(180deg, #05020b 0%, #090215 100%);
 }
 
 .siteFooter::before {
@@ -118,30 +111,6 @@ const socials = [
   pointer-events: none;
 }
 
-.footerGlow {
-  position: absolute;
-  border-radius: 999px;
-  filter: blur(72px);
-  opacity: 0.28;
-  pointer-events: none;
-}
-
-.footerGlowLeft {
-  width: 28rem;
-  height: 18rem;
-  left: -10rem;
-  top: 6rem;
-  background: #a855f7;
-}
-
-.footerGlowRight {
-  width: 28rem;
-  height: 18rem;
-  right: -9rem;
-  bottom: 3rem;
-  background: #22d3ee;
-}
-
 .footerInner {
   position: relative;
   z-index: 1;
@@ -149,46 +118,11 @@ const socials = [
   margin: 0 auto;
 }
 
-.footerHeader {
-  max-width: 50rem;
-  margin-bottom: 2rem;
-}
-
-.footerEyebrow {
-  display: inline-flex;
-  margin-bottom: 0.9rem;
-  color: #f0abfc;
-  font-size: 0.78rem;
-  font-weight: 850;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.footerHeader h2 {
-  max-width: 42rem;
-  font-size: clamp(2rem, 4vw, 3.65rem);
-  font-weight: 950;
-  line-height: 1.02;
-}
-
 .footerGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(10rem, 0.7fr) minmax(11rem, 0.82fr) minmax(0, 1fr);
-  gap: 1rem;
-  align-items: stretch;
-}
-
-.footerCard {
-  min-height: 19rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 1.15rem;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.045));
-  padding: 1.4rem;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.12),
-    0 24px 70px rgba(0, 0, 0, 0.28);
-  backdrop-filter: blur(18px);
+  grid-template-columns: minmax(0, 1.35fr) minmax(9rem, 0.65fr) minmax(12rem, 0.75fr) minmax(14rem, 0.85fr);
+  gap: 2.5rem;
+  align-items: start;
 }
 
 .footerBrand {
@@ -198,8 +132,8 @@ const socials = [
 
 .brandMark {
   display: inline-flex;
-  width: 12rem;
-  margin-bottom: 1.2rem;
+  width: 11rem;
+  margin-bottom: 1rem;
 }
 
 .brandMark img {
@@ -208,7 +142,7 @@ const socials = [
 }
 
 .footerBrand p {
-  max-width: 28rem;
+  max-width: 29rem;
   color: rgba(237, 233, 254, 0.72);
   line-height: 1.75;
 }
@@ -248,7 +182,7 @@ const socials = [
 
 .footerLinks h3,
 .footerContact h3 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.05rem;
   color: #fff;
   font-size: 0.8rem;
   font-weight: 900;
@@ -272,34 +206,29 @@ const socials = [
 }
 
 .footerContact {
-  background:
-    radial-gradient(circle at 20% 0%, rgba(168, 85, 247, 0.22), transparent 14rem),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.045));
-}
-
-.footerContact p {
-  color: rgba(237, 233, 254, 0.72);
-  line-height: 1.65;
+  min-width: 0;
 }
 
 .footerMainCta {
   display: inline-flex;
-  width: 100%;
+  width: fit-content;
   min-height: 3rem;
   align-items: center;
   justify-content: center;
-  margin: 1.15rem 0 0.85rem;
+  margin-top: 1rem;
+  padding: 0 1.25rem;
   border-radius: 999px;
-  background: linear-gradient(100deg, #a855f7, #ec4899 58%, #22d3ee);
-  color: #fff;
+  background: #ffffff;
+  color: #5b0f86;
   font-weight: 900;
-  box-shadow: 0 0 30px rgba(168, 85, 247, 0.32);
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
 }
 
 .footerMainCta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 42px rgba(168, 85, 247, 0.46);
+  background: #f5e8ff;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.3);
 }
 
 .contactLink:hover {
@@ -326,10 +255,7 @@ const socials = [
 @media (max-width: 720px) {
   .footerGrid {
     grid-template-columns: 1fr;
-  }
-
-  .footerCard {
-    min-height: auto;
+    gap: 2rem;
   }
 
   .footerBottom {
@@ -343,11 +269,7 @@ const socials = [
 
 @media (max-width: 640px) {
   .siteFooter {
-    padding: 4rem 1rem 1.5rem;
-  }
-
-  .footerCard {
-    padding: 1.2rem;
+    padding: 3.25rem 1rem 1.4rem;
   }
 }
 </style>

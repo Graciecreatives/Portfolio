@@ -2,8 +2,8 @@
 const sharp = require('sharp');
 const path = require('path');
 
-const inputPath = path.join(__dirname, 'src/assets/Logo.png');
-const outputPath = path.join(__dirname, 'public/favicon.png');
+const inputPath = path.join(__dirname, 'src/assets/brand/Logo.webp');
+const outputPath = path.join(__dirname, 'public/favicon.webp');
 
 async function generateRefinedFavicon() {
     try {
@@ -14,10 +14,10 @@ async function generateRefinedFavicon() {
         await sharp(inputPath)
             .extract({ left: 0, top: 0, width: 107, height: 107 }) // Crop the left square
             .resize(32, 32)
-            .png()
+            .webp()
             .toFile(outputPath);
             
-        console.log('Generated cropped public/favicon.png');
+        console.log('Generated cropped public/favicon.webp');
     } catch (err) {
         console.error('Error:', err);
     }

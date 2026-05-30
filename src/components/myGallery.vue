@@ -1,22 +1,22 @@
 <template>
-  <section class="py-20 px-4 md:px-12 bg-white relative">
+  <section class="gallerySection">
     
     <!-- Header -->
-    <div class="text-center mb-16" data-aos="fade-down">
-      <h2 class="text-4xl md:text-5xl font-black text-[#9318FA] mb-6 tracking-tight">LIFE AS A DEVELOPER</h2>
-      <p class="max-w-2xl mx-auto text-gray-600 text-lg leading-relaxed font-light">
+    <div class="galleryHeading" data-aos="fade-down">
+      <span>Gallery</span>
+      <h2>LIFE AS A DEVELOPER</h2>
+      <p>
          Bridges built, events hosted, and moments captured. A glimpse into my journey within the tech community.
       </p>
-      <div class="h-1.5 w-24 bg-[#9318FA] rounded-full mx-auto mt-6"></div>
     </div>
 
     <!-- Masonry-style Grid -->
-    <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 max-w-7xl mx-auto">
+    <div class="galleryGrid">
       
       <div 
         v-for="(image, index) in images" 
         :key="index"
-        class="relative group rounded-2xl overflow-hidden break-inside-avoid shadow-sm hover:shadow-xl transition-all duration-300"
+        class="galleryItem group"
         data-aos="zoom-in"
       >
         <!-- Overlay -->
@@ -83,5 +83,106 @@ const images = ref([
 </script>
 
 <style scoped>
-/* No extra styles needed, Tailwind columns handles the masonry layout */
+.gallerySection {
+  position: relative;
+  overflow: hidden;
+  padding: 9rem 1.25rem 5rem;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(236, 72, 153, 0.16), transparent 25rem),
+    radial-gradient(circle at 82% 25%, rgba(34, 211, 238, 0.12), transparent 24rem),
+    linear-gradient(135deg, #09030f 0%, #210533 52%, #05020b 100%);
+}
+
+.gallerySection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(168, 85, 247, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.16) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: center top;
+  opacity: 0.48;
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.24));
+  pointer-events: none;
+}
+
+.galleryHeading,
+.galleryGrid {
+  position: relative;
+  z-index: 1;
+}
+
+.galleryHeading {
+  max-width: 48rem;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.galleryHeading span {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #67e8f9;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.galleryHeading h2 {
+  color: #ffffff;
+  font-size: clamp(2.55rem, 5vw, 5rem);
+  font-weight: 950;
+  line-height: 1;
+}
+
+.galleryHeading p {
+  margin-top: 1.25rem;
+  color: rgba(237, 233, 254, 0.76);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.galleryGrid {
+  columns: 1;
+  column-gap: 1.5rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.galleryItem {
+  position: relative;
+  overflow: hidden;
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.galleryItem:hover {
+  transform: translateY(-4px);
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.24), 0 22px 52px rgba(0, 0, 0, 0.32);
+}
+
+@media (min-width: 768px) {
+  .galleryGrid {
+    columns: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .galleryGrid {
+    columns: 3;
+  }
+}
+
+@media (max-width: 640px) {
+  .gallerySection {
+    padding: 8rem 1rem 4rem;
+  }
+}
 </style>

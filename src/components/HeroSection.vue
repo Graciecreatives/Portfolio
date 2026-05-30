@@ -62,7 +62,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import HeroImage from '../assets/Images/portraits/My picture1.png';
+import HeroImage from '../assets/Images/portraits/My picture1.webp';
 
 const particles = ref([]);
 

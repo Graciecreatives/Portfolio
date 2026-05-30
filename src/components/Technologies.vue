@@ -31,10 +31,13 @@
 </template>
 
 <script setup>
+import expressLogo from '../assets/icons/tools/expressLogo.webp'
+import javascriptLogo from '../assets/icons/tools/javascriptLogo.webp'
+
 const technologies = [
   { name: "HTML", img: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" },
   { name: "CSS", img: "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" },
-  { name: "JavaScript", img: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" },
+  { name: "JavaScript", img: javascriptLogo },
   { name: "Bootstrap", img: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" },
   { name: "Tailwind", img: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" },
   { name: "Firebase", img: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" },
@@ -42,7 +45,7 @@ const technologies = [
   { name: "React.js", img: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" },
   { name: "Node.js", img: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" },
   { name: "MongoDB", img: "https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" },
-  { name: "Express.js", img: "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" },
+  { name: "Express.js", img: expressLogo },
   { name: "Solidity", img: "https://upload.wikimedia.org/wikipedia/commons/9/98/Solidity_logo.svg" },
   { name: "Git", img: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" },
   { name: "GitHub", img: "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" },

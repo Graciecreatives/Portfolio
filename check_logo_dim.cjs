@@ -2,7 +2,7 @@
 const sharp = require('sharp');
 const path = require('path');
 
-const inputPath = path.join(__dirname, 'src/assets/Logo.png');
+const inputPath = path.join(__dirname, 'src/assets/brand/Logo.webp');
 
 async function checkMetadata() {
     try {

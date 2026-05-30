@@ -37,9 +37,9 @@
 </template>
 
 <script setup>
-import LadyIfeImage from '../assets/Images/projects/Ladyife.png'
-import DaceImage from '../assets/Images/projects/Dace.png'
-import ElgorithmConceptImage from '../assets/Images/projects/Elgorithm-Concept.png'
+import LadyIfeImage from '../assets/Images/projects/Ladyife.webp'
+import DaceImage from '../assets/Images/projects/Dace.webp'
+import ElgorithmConceptImage from '../assets/Images/projects/Elgorithm-Concept.webp'
 
 const featuredProjects = [
   {
